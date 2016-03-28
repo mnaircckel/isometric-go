@@ -1,15 +1,22 @@
 extends Sprite
 
+# Player variables
 var game
+# Animations
 var current_frame = 0
 var last_frame = 4
 var animation_timer = 0
 var animation_cycle = .15
+# Movement
 var moving = false
 var movement_timer = 0
 var current_tile = Vector2(0,0)
 var current_location
 var target_location
+# Firing
+var firing = false
+var firing_timer = 0
+
 
 # When player is loaded into scene
 func _ready():
@@ -23,9 +30,11 @@ func _process(delta):
 	handle_input()
 	animate(delta)
 	move(delta)
+	place_bombs(delta)
 
 # All input is handled here
 func handle_input():
+	print(firing,moving)
 	# Directional input will attempt to update target location
 	if !moving:
 		movement_timer = 0
@@ -38,6 +47,13 @@ func handle_input():
 			move_target_up(object_map)
 		elif Input.is_action_pressed("ui_down"):
 			move_target_down(object_map)
+	
+	# Queue firing by setting firing to true
+	if !firing:
+		firing_timer = 0
+		if Input.is_action_pressed("ui_space"):
+			firing = true
+		
 
 # Handle movement based on target_location
 func move(delta):
@@ -93,6 +109,13 @@ func move_target_down(object_map):
 	if object_map.walkable_tile(target_tile):
 			moving = true
 			target_location = current_location+game.DISTANCE_DOWN
+
+# Handle bomb placement
+func place_bombs(delta):
+	if firing and !moving:
+		var object_map = game.get_node("ObjectMap")
+		object_map.place_bomb(current_tile)
+		firing = false
 
 # Handle animations
 func animate(delta):

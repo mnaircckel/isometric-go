@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="TileSet" subresource_count="36" version="2.0" version_name="Godot Engine v2.0.stable.custom_build">
-	<ext_resource path="res://textures/tiles/pillar_stone.png" type="Texture" index="27"></ext_resource>
-	<ext_resource path="res://textures/tiles/3b.png" type="Texture" index="32"></ext_resource>
-	<ext_resource path="res://textures/tiles/3d.png" type="Texture" index="34"></ext_resource>
-	<ext_resource path="res://textures/tiles/4f.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://textures/tiles/chest_onWater.png" type="Texture" index="21"></ext_resource>
-	<ext_resource path="res://textures/tiles/5b.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://textures/tiles/3e.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://textures/tiles/4a.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://textures/tiles/pillar_clay.png" type="Texture" index="25"></ext_resource>
-	<ext_resource path="res://textures/tiles/chest_onGrass.png" type="Texture" index="22"></ext_resource>
-	<ext_resource path="res://textures/tiles/2b.png" type="Texture" index="29"></ext_resource>
+<resource_file type="TileSet" subresource_count="37" version="2.0" version_name="Godot Engine v2.0.stable.custom_build">
 	<ext_resource path="res://textures/tiles/1c.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://textures/tiles/pillar_stone.png" type="Texture" index="27"></ext_resource>
+	<ext_resource path="res://textures/tiles/3b.png" type="Texture" index="33"></ext_resource>
+	<ext_resource path="res://textures/tiles/chest_onWater.png" type="Texture" index="21"></ext_resource>
+	<ext_resource path="res://textures/tiles/2a.png" type="Texture" index="23"></ext_resource>
+	<ext_resource path="res://textures/tiles/4f.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://textures/tiles/2b.png" type="Texture" index="30"></ext_resource>
+	<ext_resource path="res://textures/tiles/5b.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://textures/tiles/pillar_clay.png" type="Texture" index="25"></ext_resource>
 	<ext_resource path="res://textures/tiles/3f.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://textures/tiles/1b.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://textures/tiles/2a.png" type="Texture" index="23"></ext_resource>
+	<ext_resource path="res://textures/tiles/4a.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://textures/tiles/barell_clay.png" type="Texture" index="16"></ext_resource>
 	<ext_resource path="res://textures/tiles/barell_water.png" type="Texture" index="19"></ext_resource>
 	<ext_resource path="res://textures/tiles/pillar_water.png" type="Texture" index="28"></ext_resource>
 	<ext_resource path="res://textures/tiles/5c.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://textures/tiles/3d.png" type="Texture" index="35"></ext_resource>
 	<ext_resource path="res://textures/tiles/6b.png" type="Texture" index="15"></ext_resource>
-	<ext_resource path="res://textures/tiles/3c.png" type="Texture" index="33"></ext_resource>
-	<ext_resource path="res://textures/tiles/6a.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://textures/tiles/chest_onClay.png" type="Texture" index="24"></ext_resource>
-	<ext_resource path="res://textures/tiles/4b.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://textures/tiles/5a.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://textures/tiles/barell_grass.png" type="Texture" index="17"></ext_resource>
-	<ext_resource path="res://textures/tiles/4d.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://textures/tiles/4c.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://textures/tiles/chest.png" type="Texture" index="20"></ext_resource>
-	<ext_resource path="res://textures/tiles/1a.png" type="Texture" index="0"></ext_resource>
-	<ext_resource path="res://textures/tiles/pillar_grass.png" type="Texture" index="26"></ext_resource>
-	<ext_resource path="res://textures/tiles/4e.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://textures/tiles/3e.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://textures/tiles/chest_onGrass.png" type="Texture" index="22"></ext_resource>
 	<ext_resource path="res://textures/tiles/barell_plain.png" type="Texture" index="18"></ext_resource>
-	<ext_resource path="res://textures/tiles/3a.png" type="Texture" index="31"></ext_resource>
-	<ext_resource path="res://textures/tiles/2c.png" type="Texture" index="30"></ext_resource>
+	<ext_resource path="res://textures/tiles/5a.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://textures/tiles/4d.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://textures/tiles/2c.png" type="Texture" index="31"></ext_resource>
+	<ext_resource path="res://textures/tiles/barell_grass.png" type="Texture" index="17"></ext_resource>
+	<ext_resource path="res://textures/tiles/6a.png" type="Texture" index="14"></ext_resource>
+	<ext_resource path="res://textures/tiles/4e.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://textures/tiles/1a.png" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://textures/tiles/3c.png" type="Texture" index="34"></ext_resource>
+	<ext_resource path="res://textures/tiles/pillar_grass.png" type="Texture" index="26"></ext_resource>
+	<ext_resource path="res://textures/tiles/4c.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://textures/tiles/4b.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://textures/tiles/3a.png" type="Texture" index="32"></ext_resource>
+	<ext_resource path="res://textures/tiles/chest_onClay.png" type="Texture" index="24"></ext_resource>
+	<ext_resource path="res://textures/bombs.png" type="Texture" index="29"></ext_resource>
+	<ext_resource path="res://textures/tiles/chest.png" type="Texture" index="20"></ext_resource>
 	<main_resource>
 		<string name="0/name"> "Tile1" </string>
 		<resource name="0/texture" external="0">  </resource>
@@ -73,7 +74,7 @@
 		<array name="3/shapes" len="0" shared="false">
 		</array>
 		<string name="4/name"> "TIle5" </string>
-		<resource name="4/texture" external="29">  </resource>
+		<resource name="4/texture" external="30">  </resource>
 		<vector2 name="4/tex_offset"> 0, 0 </vector2>
 		<resource name="4/material"></resource>		<rect2 name="4/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="4/occluder_offset"> 64, 38.5 </vector2>
@@ -82,7 +83,7 @@
 		<array name="4/shapes" len="0" shared="false">
 		</array>
 		<string name="5/name"> "TIle6" </string>
-		<resource name="5/texture" external="30">  </resource>
+		<resource name="5/texture" external="31">  </resource>
 		<vector2 name="5/tex_offset"> 0, 0 </vector2>
 		<resource name="5/material"></resource>		<rect2 name="5/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="5/occluder_offset"> 64, 38.5 </vector2>
@@ -91,7 +92,7 @@
 		<array name="5/shapes" len="0" shared="false">
 		</array>
 		<string name="6/name"> "TIle7" </string>
-		<resource name="6/texture" external="31">  </resource>
+		<resource name="6/texture" external="32">  </resource>
 		<vector2 name="6/tex_offset"> 0, 0 </vector2>
 		<resource name="6/material"></resource>		<rect2 name="6/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="6/occluder_offset"> 64, 39 </vector2>
@@ -100,7 +101,7 @@
 		<array name="6/shapes" len="0" shared="false">
 		</array>
 		<string name="7/name"> "TIle8" </string>
-		<resource name="7/texture" external="32">  </resource>
+		<resource name="7/texture" external="33">  </resource>
 		<vector2 name="7/tex_offset"> 0, 0 </vector2>
 		<resource name="7/material"></resource>		<rect2 name="7/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="7/occluder_offset"> 64, 39 </vector2>
@@ -109,7 +110,7 @@
 		<array name="7/shapes" len="0" shared="false">
 		</array>
 		<string name="8/name"> "TIle9" </string>
-		<resource name="8/texture" external="33">  </resource>
+		<resource name="8/texture" external="34">  </resource>
 		<vector2 name="8/tex_offset"> 0, 0 </vector2>
 		<resource name="8/material"></resource>		<rect2 name="8/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="8/occluder_offset"> 64, 39 </vector2>
@@ -118,7 +119,7 @@
 		<array name="8/shapes" len="0" shared="false">
 		</array>
 		<string name="9/name"> "TIle10" </string>
-		<resource name="9/texture" external="34">  </resource>
+		<resource name="9/texture" external="35">  </resource>
 		<vector2 name="9/tex_offset"> 0, 0 </vector2>
 		<resource name="9/material"></resource>		<rect2 name="9/region"> 0, 0, 0, 0 </rect2>
 		<vector2 name="9/occluder_offset"> 64, 39 </vector2>
@@ -304,8 +305,8 @@
 		<vector2 name="29/occluder_offset"> 64, 63 </vector2>
 		<resource name="29/occluder"></resource>		<vector2 name="29/navigation_offset"> 64, 63 </vector2>
 		<resource name="29/navigation"></resource>		<vector2 name="29/shape_offset"> 0, 0 </vector2>
-		<array name="29/shapes" len="1" shared="false">
-			<resource name=""></resource>		</array>
+		<array name="29/shapes" len="0" shared="false">
+		</array>
 		<string name="30/name"> "TIle31" </string>
 		<resource name="30/texture" external="24">  </resource>
 		<vector2 name="30/tex_offset"> 0, 0 </vector2>
@@ -350,6 +351,15 @@
 		<resource name="34/occluder"></resource>		<vector2 name="34/navigation_offset"> 64, 96 </vector2>
 		<resource name="34/navigation"></resource>		<vector2 name="34/shape_offset"> 0, 0 </vector2>
 		<array name="34/shapes" len="0" shared="false">
+		</array>
+		<string name="35/name"> "Tile36" </string>
+		<resource name="35/texture" external="29">  </resource>
+		<vector2 name="35/tex_offset"> 0, 0 </vector2>
+		<resource name="35/material"></resource>		<rect2 name="35/region"> 0, 0, 128, 128 </rect2>
+		<vector2 name="35/occluder_offset"> 64, 64 </vector2>
+		<resource name="35/occluder"></resource>		<vector2 name="35/navigation_offset"> 64, 64 </vector2>
+		<resource name="35/navigation"></resource>		<vector2 name="35/shape_offset"> 0, 0 </vector2>
+		<array name="35/shapes" len="0" shared="false">
 		</array>
 
 	</main_resource>
