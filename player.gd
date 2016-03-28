@@ -17,7 +17,6 @@ var target_location
 var firing = false
 var firing_timer = 0
 
-
 # When player is loaded into scene
 func _ready():
 	set_process(true)
@@ -34,7 +33,6 @@ func _process(delta):
 
 # All input is handled here
 func handle_input():
-	print(firing,moving)
 	# Directional input will attempt to update target location
 	if !moving:
 		movement_timer = 0
@@ -53,7 +51,6 @@ func handle_input():
 		firing_timer = 0
 		if Input.is_action_pressed("ui_space"):
 			firing = true
-		
 
 # Handle movement based on target_location
 func move(delta):
@@ -114,8 +111,9 @@ func move_target_down(object_map):
 func place_bombs(delta):
 	if firing and !moving:
 		var object_map = game.get_node("ObjectMap")
-		object_map.place_bomb(current_tile)
 		firing = false
+		if object_map.walkable_tile(current_tile):
+			object_map.place_bomb(current_tile)
 
 # Handle animations
 func animate(delta):
