@@ -16,6 +16,7 @@ var target_location
 # Firing
 var firing = false
 var firing_timer = 0
+var bomb_strength = 1
 
 # When player is loaded into scene
 func _ready():
@@ -113,7 +114,7 @@ func place_bombs(delta):
 		var object_map = game.get_node("ObjectMap")
 		firing = false
 		if object_map.walkable_tile(current_tile):
-			object_map.place_bomb(current_tile)
+			object_map.place_bomb(current_tile, bomb_strength)
 
 # Handle animations
 func animate(delta):

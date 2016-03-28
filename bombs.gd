@@ -11,8 +11,8 @@ func _ready():
 func _process(delta):
 	update_bombs(delta)
 
-func add_bomb(location):
-	var bomb = preload("res://bomb.gd").new(location, object_map)
+func add_bomb(location, bomb_strength):
+	var bomb = preload("res://bomb.gd").new(location, bomb_strength, object_map)
 	bombs.push_back(bomb)
 
 # Iterative through all active bombs and update them
