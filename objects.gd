@@ -12,3 +12,4 @@ func walkable_tile(location):
 func place_bomb(location):
 	bombs.add_bomb(location)
 
+	
