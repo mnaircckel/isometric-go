@@ -1,4 +1,3 @@
-
 extends Node2D
 
 # Game constants
@@ -12,14 +11,17 @@ var GAME_TICK = .5
 
 # Game variables
 var level
+var menu
 var object_handler
 
 func _ready():
 	# See objects.gd for object_handler code
 	object_handler = get_node("ObjectMapHandler")
 	load_level("level_one.scn")
+	load_menu("hud.scn")
+	
 
-# Load a level from a scene:
+# Load a level from a scene
 # Levels must include a TileMap called ObjectMap (Used for objects)
 func load_level(level_name):
 	level = load(level_name).instance()
@@ -27,4 +29,9 @@ func load_level(level_name):
 	move_child(level, 0)
 	object_handler.clear()
 	object_handler.load_objects(level.get_node("ObjectMap"))
+
+# Load menu from a scene
+func load_menu(menu_name):
+	menu = load(menu_name).instance()
+	add_child(menu)
 	
