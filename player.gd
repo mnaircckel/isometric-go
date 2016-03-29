@@ -16,8 +16,12 @@ var current_location
 var target_location
 # Firing
 var firing = false
+var bomb_delay = 1.5
 var firing_timer = 0
 var bomb_strength = 2
+# Health
+var current_health = 4
+var max_health = 4
 
 # When player is loaded into scene
 func _ready():
@@ -49,8 +53,7 @@ func handle_input():
 			move_target_down(object_map)
 	
 	# Queue firing by setting firing to true
-	if !firing:
-		firing_timer = 0
+	if !firing and firing_timer == 0:
 		if Input.is_action_pressed("ui_space"):
 			firing = true
 
@@ -111,11 +114,30 @@ func move_target_down(object_map):
 
 # Handle bomb placement
 func place_bombs(delta):
+	firing_timer -= delta
+	if firing_timer < 0:
+		firing_timer =  0
 	if firing and !moving:
 		var object_map = game.get_node("ObjectMapHandler")
+		firing_timer = bomb_delay
 		firing = false
 		if object_map.walkable_tile(current_tile):
 			object_map.place_bomb(current_tile, bomb_strength)
+
+# Handle damage
+func take_damage(amount):
+	current_health -= amount
+	if current_health <= 0:
+		current_health = 0
+		death()
+
+func heal(amount):
+	current_health += amount
+	if current_health > max_health:
+		current_health = max_health
+
+func death():
+	game.game_over()
 
 # Handle animations
 func animate(delta):

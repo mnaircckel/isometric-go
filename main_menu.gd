@@ -5,35 +5,39 @@ const options = ["new","resume","options","quit"]
 const menu_top = 186
 const option_height = 62
 const number_of_options = 4
-const menu_bottom = menu_top + (number_of_options-1)*option_height
 # Menu variables
 var option_index = 0
 var select
 var active_game
+var clear_game
 
 func _ready():
 	select = get_node("Select")
 	set_process_input(true)
+	if active_game == false:
+		free_current_game()
+	update_select_to_option()
 
 func _input(event):
 	# Selection option
 	if Input.is_action_pressed("ui_up") and !event.is_echo():
 		option_index -= 1
-		select.set_pos(select.get_pos()+Vector2(0,-option_height))
 	if Input.is_action_pressed("ui_down") and !event.is_echo():
 		option_index += 1
-		select.set_pos(select.get_pos()+Vector2(0,option_height))
 	
-	if select.get_pos().y < menu_top:
+	if option_index < 0:
 		option_index = number_of_options-1
-		select.set_pos(Vector2(select.get_pos().x,menu_bottom))
-	elif select.get_pos().y > menu_bottom:
+	elif option_index > number_of_options-1:
 		option_index = 0
-		select.set_pos(Vector2(select.get_pos().x,menu_top))
+	
+	update_select_to_option()
 	
 	# Chose option
 	if Input.is_action_pressed("ui_accept") and !event.is_echo():
 		execute_current_option()
+
+func update_select_to_option():
+	select.set_pos(Vector2(select.get_pos().x,menu_top + option_height*option_index))
 		
 func execute_current_option():
 	if option_index == 0:

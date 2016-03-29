@@ -9,5 +9,4 @@ func _ready():
 func _input(event):
 	# Quit
 	if Input.is_action_pressed("ui_exit") and !event.is_echo():
-		game.quit_to_main_menu()
-		queue_free()
+		game.quit_to_main_menu(false)

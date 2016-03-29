@@ -32,7 +32,7 @@ func _process(delta):
 
 func _input(event):
 	if Input.is_action_pressed("ui_exit") and !event.is_echo():
-		quit_to_main_menu()
+		quit_to_main_menu(true)
 
 func get_time_left():
 	return time
@@ -56,11 +56,13 @@ func load_hud(hud_name):
 	hud = load(hud_name).instance()
 	add_child(hud)
 
-func quit_to_main_menu():
+func quit_to_main_menu(is_active_game):
 	var menu_scene = MainMenu.instance()
-	menu_scene.active_game = true
-	get_tree().get_root().add_child(menu_scene)
+	menu_scene.active_game = is_active_game
+	if is_active_game:
+		menu_scene.option_index = 1
 	get_tree().set_pause(true)
+	get_tree().get_root().add_child(menu_scene)
 
 func game_over():
 	load_hud("game_over.scn")
