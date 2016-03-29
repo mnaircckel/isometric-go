@@ -2,11 +2,12 @@ extends Sprite
 
 # Player variables
 var game
-# Animations
-var current_frame = 0
-var last_frame = 4
+# Animation constants
+const last_frame = 4
+const animation_cycle = .15
+# Animation variables
 var animation_timer = 0
-var animation_cycle = .15
+var current_frame = 0
 # Movement
 var moving = false
 var movement_timer = 0

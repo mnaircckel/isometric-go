@@ -1,17 +1,18 @@
 extends Node2D
 
 # Game constants
-var TILE_SIZE_X = 64
-var TILE_SIZE_Y = 32
-var DISTANCE_LEFT = Vector2(-TILE_SIZE_X, TILE_SIZE_Y)
-var DISTANCE_RIGHT = Vector2(TILE_SIZE_X, -TILE_SIZE_Y)
-var DISTANCE_UP = Vector2(-TILE_SIZE_X, -TILE_SIZE_Y)
-var DISTANCE_DOWN = Vector2(TILE_SIZE_X, TILE_SIZE_Y)
-var GAME_TICK = .5
-
+const TILE_SIZE_X = 64
+const TILE_SIZE_Y = 32
+const DISTANCE_LEFT = Vector2(-TILE_SIZE_X, TILE_SIZE_Y)
+const DISTANCE_RIGHT = Vector2(TILE_SIZE_X, -TILE_SIZE_Y)
+const DISTANCE_UP = Vector2(-TILE_SIZE_X, -TILE_SIZE_Y)
+const DISTANCE_DOWN = Vector2(TILE_SIZE_X, TILE_SIZE_Y)
+const GAME_TICK = .5
+const LEVEL_TIMES = [300]
+# Preload scenes
+const MainMenu = preload("main_menu.scn")
 # Game variables
 var level
-var level_times = [300]
 var time = 0
 var hud
 var object_handler
@@ -38,7 +39,7 @@ func get_time_left():
 
 # Get time requirement for level
 func get_level_time(level):
-	return level_times[level]
+	return LEVEL_TIMES[level]
 
 # Load a level from a scene
 # Levels must include a TileMap called ObjectMap (Used for objects)
@@ -56,7 +57,7 @@ func load_hud(hud_name):
 	add_child(hud)
 
 func quit_to_main_menu():
-	var menu_scene = preload("main_menu.scn").instance()
+	var menu_scene = MainMenu.instance()
 	menu_scene.active_game = true
 	get_tree().get_root().add_child(menu_scene)
 	get_tree().set_pause(true)

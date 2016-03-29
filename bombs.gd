@@ -1,5 +1,7 @@
 extends Node2D
 
+# Preload bomb
+const Bomb = preload("res://bomb.gd")
 # Bomb handler variables
 var object_map
 var bombs = []
@@ -12,7 +14,7 @@ func _process(delta):
 	update_bombs(delta)
 
 func add_bomb(location, bomb_strength):
-	var bomb = preload("res://bomb.gd").new(location, bomb_strength, object_map)
+	var bomb = Bomb.new(location, bomb_strength, object_map)
 	bombs.push_back(bomb)
 
 # Iterative through all active bombs and update them

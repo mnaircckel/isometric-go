@@ -1,9 +1,10 @@
 extends TileMap
 
-# TileMap variables
-var bomb_index = 35
-var indestructible_indices = [0,27,28,29,30,31,32,33,34]
-var explosion_indices = [42,43,44,45,46,47,48,49,50,51]
+# TileMap constants
+const bomb_index = 35
+const indestructible_indices = [0,27,28,29,30,31,32,33,34]
+const explosion_indices = [42,43,44,45,46,47,48,49,50,51]
+# Tilemap variables
 var bomb_handler
 
 func _ready():

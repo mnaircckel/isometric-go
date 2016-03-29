@@ -1,11 +1,13 @@
 extends CanvasLayer
 
-var options = ["new","resume","options","quit"]
+# Menu constants
+const options = ["new","resume","options","quit"]
+const menu_top = 186
+const option_height = 62
+const number_of_options = 4
+const menu_bottom = menu_top + (number_of_options-1)*option_height
+# Menu variables
 var option_index = 0
-var menu_top = 186
-var option_height = 62
-var number_of_options = 4
-var menu_bottom = menu_top + (number_of_options-1)*option_height
 var select
 var active_game
 

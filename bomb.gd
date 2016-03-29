@@ -4,7 +4,6 @@ extends Node2D
 var bomb_cycle = .12
 var last_frame = 16
 var explosion_frame = 7
-
 # Bomb variables
 var location
 var current_frame
