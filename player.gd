@@ -37,7 +37,7 @@ func handle_input():
 	# Directional input will attempt to update target location
 	if !moving:
 		movement_timer = 0
-		var object_map = game.get_node("ObjectMap")
+		var object_map = game.get_node("ObjectMapHandler")
 		if Input.is_action_pressed("ui_left"):
 			move_target_left(object_map)
 		elif Input.is_action_pressed("ui_right"):
@@ -111,7 +111,7 @@ func move_target_down(object_map):
 # Handle bomb placement
 func place_bombs(delta):
 	if firing and !moving:
-		var object_map = game.get_node("ObjectMap")
+		var object_map = game.get_node("ObjectMapHandler")
 		firing = false
 		if object_map.walkable_tile(current_tile):
 			object_map.place_bomb(current_tile, bomb_strength)
