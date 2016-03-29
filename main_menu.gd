@@ -7,6 +7,7 @@ var option_height = 62
 var number_of_options = 4
 var menu_bottom = menu_top + (number_of_options-1)*option_height
 var select
+var active_game
 
 func _ready():
 	select = get_node("Select")
@@ -34,14 +35,28 @@ func _input(event):
 		
 func execute_current_option():
 	if option_index == 0:
-		var game_scene = preload("main.scn").instance()
-		get_tree().get_root().add_child(game_scene)
-		queue_free()
+		start_game()
 	elif option_index == 1:
-		pass
+		resume()
 	elif option_index == 2:
 		pass
 	elif option_index == 3:
 		# Not sure if this is the correct way to quit
 		queue_free()
 		get_tree().quit()
+
+func free_current_game():
+	get_tree().get_root().remove_child(get_tree().get_root().get_node("Game"))
+
+func start_game():
+	var game_scene = preload("main.scn").instance()
+	if active_game:
+		free_current_game()
+	get_tree().get_root().add_child(game_scene)
+	get_tree().set_pause(false)
+	queue_free()
+
+func resume():
+	if active_game:
+		get_tree().set_pause(false)
+		queue_free()

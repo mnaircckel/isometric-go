@@ -40,6 +40,7 @@ func load_hud(hud_name):
 
 func quit_to_main_menu():
 	var menu_scene = preload("main_menu.scn").instance()
+	menu_scene.active_game = true
 	get_tree().get_root().add_child(menu_scene)
-	queue_free()
+	get_tree().set_pause(true)
 	
