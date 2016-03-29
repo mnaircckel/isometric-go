@@ -1,7 +1,8 @@
 extends Node2D
 
 # Bomb constants
-var bomb_cycle = .12
+var bomb_cycle = .35
+var explosion_cycle = .08
 var last_frame = 16
 var explosion_frame = 7
 # Bomb variables
@@ -72,7 +73,7 @@ func bomb_can_destroy(location):
 
 # Animations and updates
 func update_bomb():
-	if bomb_timer > bomb_cycle:
+	if (bomb_timer > bomb_cycle and current_frame < 7) or (bomb_timer > explosion_cycle and current_frame >= 7):
 		current_frame += 1
 		bomb_timer = 0
 		if current_frame > last_frame:
