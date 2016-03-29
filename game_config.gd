@@ -11,14 +11,14 @@ var GAME_TICK = .5
 
 # Game variables
 var level
-var menu
+var hud
 var object_handler
 
 func _ready():
 	# See objects.gd for object_handler code
 	object_handler = get_node("ObjectMapHandler")
 	load_level("level_one.scn")
-	load_menu("hud.scn")
+	load_hud("hud.scn")
 	
 
 # Load a level from a scene
@@ -30,8 +30,8 @@ func load_level(level_name):
 	object_handler.clear()
 	object_handler.load_objects(level.get_node("ObjectMap"))
 
-# Load menu from a scene
-func load_menu(menu_name):
-	menu = load(menu_name).instance()
-	add_child(menu)
+# Load hud from a scene
+func load_hud(hud_name):
+	hud = load(hud_name).instance()
+	add_child(hud)
 	
