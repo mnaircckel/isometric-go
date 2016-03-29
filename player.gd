@@ -16,7 +16,7 @@ var target_location
 # Firing
 var firing = false
 var firing_timer = 0
-var bomb_strength = 1
+var bomb_strength = 2
 
 # When player is loaded into scene
 func _ready():

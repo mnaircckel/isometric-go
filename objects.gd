@@ -3,6 +3,7 @@ extends TileMap
 # TileMap variables
 var bomb_index = 35
 var indestructible_indices = [0,27,28,29,30,31,32,33,34]
+var explosion_indices = [42,43,44,45,46,47,48,49,50,51]
 var bomb_handler
 
 func _ready():
@@ -14,7 +15,7 @@ func place_bomb(location, bomb_strength):
 
 # Utility functions
 func walkable_tile(location):
-	return !(location in get_used_cells())
+	return !(location in get_used_cells()) or (get_object_index(location) in explosion_indices)
 
 func is_destructible(index):
 	return !(index in indestructible_indices)
