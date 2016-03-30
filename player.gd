@@ -36,7 +36,7 @@ func _process(delta):
 	animate(delta)
 	move(delta)
 	place_bombs(delta)
-
+	
 # All input is handled here
 func handle_input():
 	# Directional input will attempt to update target location
