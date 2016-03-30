@@ -18,4 +18,14 @@ func deal_damage_at_tile(location, amount):
 		if enemy != null:
 			if enemy.current_tile == location:
 				enemy.take_damage(amount)
-	
+
+func damage_player(location, amount):
+	# Player
+	if player.current_tile == location:
+		player.take_damage(amount)
+
+func walked_into_enemy(location):
+	for enemy in enemies.get_children():
+		if enemy != null:
+			if enemy.current_tile == location:
+				player.take_damage(enemy.damage)

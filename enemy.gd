@@ -2,6 +2,7 @@ extends Sprite
 
 # Enemy variables
 var game
+var damage_handler
 # Animation constants
 const last_frame = 4
 const animation_cycle = .15
@@ -20,11 +21,14 @@ var target_location
 # Health
 var current_health = 1
 var max_health = 1
+# Damage
+var damage = 1
 
 # When enemy is loaded into scene
 func _ready():
 	set_process(true)
 	game = get_tree().get_root().get_node("Game")
+	damage_handler = game.get_node("DamageHandler")
 	current_location = tile_to_pos()
 	set_pos(current_location)
 	target_location = current_location
@@ -81,7 +85,6 @@ func move(delta):
 	# Move
 	var to_move = target_location-current_location
 	if reached_target_location():
-		moving = false
 		if to_move == game.DISTANCE_LEFT:
 			current_tile.y += 1
 		elif to_move == game.DISTANCE_RIGHT:
@@ -90,6 +93,9 @@ func move(delta):
 			current_tile.x -= 1
 		elif to_move == game.DISTANCE_DOWN:
 			current_tile.x += 1
+		if moving:
+			damage_handler.damage_player(current_tile, damage)
+		moving = false
 		current_location = target_location
 		set_pos(target_location)
 	else:
@@ -110,6 +116,8 @@ func move_target_left(object_map):
 	if object_map.walkable_tile(target_tile):
 		moving = true
 		target_location = current_location+game.DISTANCE_LEFT
+	else:
+		pick_random_direction()
 	
 func move_target_right(object_map):
 	set_animation_right()
@@ -117,6 +125,8 @@ func move_target_right(object_map):
 	if object_map.walkable_tile(target_tile):
 		moving = true
 		target_location = current_location+game.DISTANCE_RIGHT
+	else:
+		pick_random_direction()
 
 func move_target_up(object_map):
 	set_animation_up()
@@ -124,6 +134,8 @@ func move_target_up(object_map):
 	if object_map.walkable_tile(target_tile):
 		moving = true
 		target_location = current_location+game.DISTANCE_UP
+	else:
+		pick_random_direction()
 
 func move_target_down(object_map):
 	set_animation_down()
@@ -131,6 +143,8 @@ func move_target_down(object_map):
 	if object_map.walkable_tile(target_tile):
 			moving = true
 			target_location = current_location+game.DISTANCE_DOWN
+	else:
+		pick_random_direction()
 
 # Handle damage
 func take_damage(amount):

@@ -2,6 +2,7 @@ extends Sprite
 
 # Player variables
 var game
+var damage_handler
 # Animation constants
 const last_frame = 4
 const animation_cycle = .15
@@ -20,13 +21,14 @@ var bomb_delay = 1.5
 var firing_timer = 0
 var bomb_strength = 2
 # Health
-var current_health = 4
-var max_health = 4
+var current_health = 3
+var max_health = 3
 
 # When player is loaded into scene
 func _ready():
 	set_process(true)
 	game = get_parent()
+	damage_handler = game.get_node("DamageHandler")
 	current_location = get_pos()
 	target_location = get_pos()
 
@@ -61,7 +63,6 @@ func handle_input():
 func move(delta):
 	var to_move = target_location-current_location
 	if reached_target_location():
-		moving = false
 		if to_move == game.DISTANCE_LEFT:
 			current_tile.y += 1
 		elif to_move == game.DISTANCE_RIGHT:
@@ -70,6 +71,9 @@ func move(delta):
 			current_tile.x -= 1
 		elif to_move == game.DISTANCE_DOWN:
 			current_tile.x += 1
+		if moving:
+			damage_handler.walked_into_enemy(current_tile)
+		moving = false
 		current_location = target_location
 		set_pos(target_location)
 	else:
