@@ -1,7 +1,7 @@
 extends Node2D
 
 # Preload bomb
-const Bomb = preload("res://bomb.gd")
+const Bomb = preload("bomb.gd")
 # Bomb handler variables
 var object_map
 var bombs = []
