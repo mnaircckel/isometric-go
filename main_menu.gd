@@ -5,6 +5,7 @@ const options = ["new","resume","options","quit"]
 const menu_top = 186
 const option_height = 62
 const number_of_options = 4
+const GameScene = preload("main.scn")
 # Menu variables
 var option_index = 0
 var select
@@ -55,7 +56,7 @@ func free_current_game():
 	get_tree().get_root().remove_child(get_tree().get_root().get_node("Game"))
 
 func start_game():
-	var game_scene = preload("scenes/main.scn").instance()
+	var game_scene = GameScene.instance()
 	if active_game:
 		free_current_game()
 	get_tree().get_root().add_child(game_scene)

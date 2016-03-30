@@ -1,6 +1,6 @@
 extends Node2D
 
-const Enemy = preload("scenes/enemy.scn")
+const Enemy = preload("enemy.scn")
 var game
 var spawn = true
 
