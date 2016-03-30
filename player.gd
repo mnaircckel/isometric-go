@@ -23,14 +23,35 @@ var bomb_strength = 2
 # Health
 var current_health = 3
 var max_health = 3
+# Camera
+var camera
+var zoom = 1
+var max_zoom = 1
+var min_zoom = 1.4
 
 # When player is loaded into scene
 func _ready():
 	set_process(true)
+	set_process_input(true)
 	game = get_parent()
 	damage_handler = game.get_node("DamageHandler")
+	camera = get_node("Camera2D")
 	current_location = get_pos()
 	target_location = get_pos()
+
+# Camera zoom
+func _input(event):
+	if Input.is_action_pressed("ui_zoom_in") and !event.is_echo():
+		zoom += .2
+	elif Input.is_action_pressed("ui_zoom_out") and !event.is_echo():
+		zoom -= .2
+	
+	if zoom > min_zoom:
+		zoom = min_zoom
+	elif zoom < max_zoom:
+		zoom = max_zoom
+	
+	camera.set_zoom(Vector2(zoom, zoom))
 
 # Process every frame
 func _process(delta):
@@ -39,7 +60,7 @@ func _process(delta):
 	move(delta)
 	place_bombs(delta)
 	
-# All input is handled here
+# All game input is handled here
 func handle_input():
 	# Directional input will attempt to update target location
 	if !moving:
