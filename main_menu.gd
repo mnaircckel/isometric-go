@@ -55,7 +55,7 @@ func free_current_game():
 	get_tree().get_root().remove_child(get_tree().get_root().get_node("Game"))
 
 func start_game():
-	var game_scene = preload("main.scn").instance()
+	var game_scene = preload("scenes/main.scn").instance()
 	if active_game:
 		free_current_game()
 	get_tree().get_root().add_child(game_scene)

@@ -10,7 +10,7 @@ const DISTANCE_DOWN = Vector2(TILE_SIZE_X, TILE_SIZE_Y)
 const GAME_TICK = .5
 const LEVEL_TIMES = [300]
 # Preload scenes
-const MainMenu = preload("main_menu.scn")
+const MainMenu = preload("scenes/main_menu.scn")
 # Game variables
 var level
 var time = 0
@@ -20,8 +20,8 @@ var object_handler
 func _ready():
 	# See objects.gd for object_handler code
 	object_handler = get_node("ObjectMapHandler")
-	load_level("level_one.scn", 0)
-	load_hud("hud.scn")
+	load_level("scenes/level_one.scn", 0)
+	load_hud("scenes/hud.scn")
 	set_process_input(true)
 	set_process(true)
 
@@ -65,6 +65,6 @@ func quit_to_main_menu(is_active_game):
 	get_tree().get_root().add_child(menu_scene)
 
 func game_over():
-	load_hud("game_over.scn")
+	load_hud("scenes/game_over.scn")
 	get_tree().set_pause(true)
 	
