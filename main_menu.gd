@@ -57,6 +57,9 @@ func free_current_game():
 
 func start_game():
 	var game_scene = GameScene.instance()
+	var object_handler = game_scene.get_node("ObjectMapHandler")
+	game_scene.load_level("level_one.scn", 0, object_handler)
+	game_scene.load_hud("hud.scn")
 	if active_game:
 		free_current_game()
 	get_tree().get_root().add_child(game_scene)

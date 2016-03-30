@@ -1,10 +1,10 @@
 extends Node2D
 
 # Bomb constants
-var bomb_cycle = .4
-var explosion_cycle = .1
-var last_frame = 16
-var explosion_frame = 7
+const bomb_cycle = .4
+const explosion_cycle = .1
+const last_frame = 16
+const explosion_frame = 7
 # Bomb variables
 var location
 var current_frame

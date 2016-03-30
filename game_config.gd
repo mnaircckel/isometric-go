@@ -15,13 +15,8 @@ const MainMenu = preload("main_menu.scn")
 var level
 var time = 0
 var hud
-var object_handler
 
 func _ready():
-	# See objects.gd for object_handler code
-	object_handler = get_node("ObjectMapHandler")
-	load_level("level_one.scn", 0)
-	load_hud("hud.scn")
 	set_process_input(true)
 	set_process(true)
 
@@ -43,7 +38,7 @@ func get_level_time(level):
 
 # Load a level from a scene
 # Levels must include a TileMap called ObjectMap (Used for objects)
-func load_level(level_name, level_index):
+func load_level(level_name, level_index, object_handler):
 	level = load(level_name).instance()
 	time = get_level_time(level_index)
 	add_child(level)

@@ -18,8 +18,8 @@ export var current_tile = Vector2(0,0)
 var current_location
 var target_location
 # Health
-var current_health = 4
-var max_health = 4
+var current_health = 1
+var max_health = 1
 
 # When enemy is loaded into scene
 func _ready():
